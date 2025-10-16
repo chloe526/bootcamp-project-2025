@@ -32,7 +32,7 @@ const Blogs: Blog[] = [
   },
 ];
 
-const blogContainer = document.getElementById('blog-container')!;
+const blogContainer = document.getElementById('blog-container');
 console.log(blogContainer)
 
 Blogs.forEach((blog) => {
@@ -58,5 +58,6 @@ Blogs.forEach((blog) => {
     blogDiv.appendChild(image);
     blogDiv.appendChild(description);
 
-    blogContainer.appendChild(blogDiv);
+    if (blogContainer)
+        blogContainer.appendChild(blogDiv);
 });
