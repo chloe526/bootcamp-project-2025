@@ -9,6 +9,7 @@ var Blogs = [
         image: "hellweek.jpg",
         imageAlt: "crashing out",
         slug: "/hellweek",
+        id: "1"
     },
     {
         title: "Shawn Mendes Concert",
@@ -17,6 +18,7 @@ var Blogs = [
         image: "shawnmendes.jpg",
         imageAlt: "shawn mendes concert pic",
         slug: "/shawnmendes",
+        id: "2"
     },
     {
         title: "Food.",
@@ -25,6 +27,7 @@ var Blogs = [
         image: "huilaushan.jpg",
         imageAlt: "hui lau shan preview",
         slug: "food",
+        id: "3"
     },
 ];
 var blogContainer = document.getElementById('blog-container');
@@ -45,6 +48,7 @@ Blogs.forEach(function (blog) {
     var image = document.createElement("img");
     image.src = blog.image;
     image.alt = blog.imageAlt;
+    image.id = "blog-image-".concat(blog.id);
     image.style.width = "100%";
     image.style.maxWidth = "400px";
     image.style.borderRadius = "10px";
@@ -60,3 +64,13 @@ Blogs.forEach(function (blog) {
     if (blogContainer)
         blogContainer.appendChild(blogDiv);
 });
+var btn = document.getElementById('btn');
+if (btn) {
+    btn.addEventListener('click', function () {
+        var img = document.getElementById('blog-image-1');
+        if (img) {
+            img.src = "dead.jpg";
+            img.alt = "dead image";
+        }
+    });
+}

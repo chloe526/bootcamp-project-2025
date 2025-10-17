@@ -8,6 +8,7 @@ type Blog = {
   image: string;
   imageAlt: string;
   slug: string;
+  id: string;
 };
 
 /**
@@ -21,6 +22,7 @@ const Blogs: Blog[] = [
     image: "hellweek.jpg",
     imageAlt: "crashing out",
     slug: "/hellweek",
+    id: "1"
   },
   {
     title: "Shawn Mendes Concert",
@@ -29,6 +31,7 @@ const Blogs: Blog[] = [
     image: "shawnmendes.jpg",
     imageAlt: "shawn mendes concert pic",
     slug: "/shawnmendes",
+    id: "2"
   },
   {
     title: "Food.",
@@ -37,6 +40,7 @@ const Blogs: Blog[] = [
     image: "huilaushan.jpg",
     imageAlt: "hui lau shan preview",
     slug: "food",
+    id: "3"
   },
 ];
 
@@ -67,22 +71,34 @@ Blogs.forEach((blog) => {
     const image = document.createElement("img");
     image.src = blog.image;
     image.alt = blog.imageAlt;
+    image.id = `blog-image-${blog.id}`;
     image.style.width = "100%";
     image.style.maxWidth = "400px";
     image.style.borderRadius = "10px";
 
-
     const description = document.createElement("p");
     description.textContent = blog.description;
 
-    blogDiv.append(linebreak)
+    blogDiv.append(linebreak);
     blogDiv.appendChild(title);
     blogDiv.appendChild(date);
     blogDiv.appendChild(image);
     blogDiv.appendChild(description);
-    blogDiv.appendChild(link)
-    blogDiv.append(space)
+    blogDiv.appendChild(link);
+    blogDiv.append(space);
 
     if (blogContainer)
         blogContainer.appendChild(blogDiv);
 });
+
+
+const btn = document.getElementById('btn');
+if (btn) {
+    btn.addEventListener('click', () => {
+        const img = document.getElementById('blog-image-1') as HTMLImageElement;
+        if (img) {
+            img.src = "dead.jpg"; 
+            img.alt = "dead image"; 
+        }
+    });
+}
