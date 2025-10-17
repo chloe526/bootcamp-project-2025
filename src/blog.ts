@@ -94,11 +94,18 @@ Blogs.forEach((blog) => {
 
 const btn = document.getElementById('btn');
 if (btn) {
-    btn.addEventListener('click', () => {
-        const img = document.getElementById('blog-image-1') as HTMLImageElement;
-        if (img) {
-            img.src = "dead.jpg"; 
-            img.alt = "dead image"; 
+
+    const img = document.getElementById('blog-image-1') as HTMLImageElement;
+
+    btn.addEventListener('click', () => 
+        {
+        if (img.src == "hellweek.jpg") {
+            img.src = "dead.jpg"
+            img.alt = "old image with one eye";
+        } else 
+            {
+            img.src = "hellweek.jpg"
+            img.alt = "new image with 1 eyes open"
         }
     });
 }
