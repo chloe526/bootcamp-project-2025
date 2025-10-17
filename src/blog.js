@@ -6,8 +6,8 @@ var Blogs = [
         title: "Week before Midterm Season",
         date: "October 16, 2025",
         description: "Day in life of college student before first midterm",
-        image: "vitamincwater.jpg",
-        imageAlt: "Vitamin C Water",
+        image: "hellweek.jpg",
+        imageAlt: "crashing out",
         slug: "/midterm-season",
     },
     {
