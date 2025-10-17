@@ -6,7 +6,7 @@ var Blogs = [
         title: "Midterm Season",
         date: "October 16, 2025",
         description: "Day in life of college student during their first midterm",
-        image: "hellweek.jpg",
+        image: "beforedead.jpg",
         imageAlt: "crashing out",
         slug: "/hellweek",
         id: "1"
@@ -66,11 +66,15 @@ Blogs.forEach(function (blog) {
 });
 var btn = document.getElementById('btn');
 if (btn) {
+    var img_1 = document.getElementById('blog-image-1');
     btn.addEventListener('click', function () {
-        var img = document.getElementById('blog-image-1');
-        if (img) {
-            img.src = "dead.jpg";
-            img.alt = "dead image";
+        if (img_1.src.endsWith("beforedead.jpg")) {
+            img_1.src = "dead.jpg";
+            img_1.alt = "old image with one eye";
+        }
+        else {
+            img_1.src = "beforedead.jpg";
+            img_1.alt = "new image with 1 eyes open";
         }
     });
 }

@@ -19,7 +19,7 @@ const Blogs: Blog[] = [
     title: "Midterm Season",
     date: "October 16, 2025",
     description: "Day in life of college student during their first midterm",
-    image: "hellweek.jpg",
+    image: "https://github.com/chloe526/bootcamp-project-2025/blob/main/hellweek.jpg?raw=true",
     imageAlt: "crashing out",
     slug: "/hellweek",
     id: "1"
@@ -28,7 +28,7 @@ const Blogs: Blog[] = [
     title: "Shawn Mendes Concert",
     date: "October 14, 2025",
     description: "Went back to the bay area to see family and attend Shawn Mendes concert with childhood friends",
-    image: "shawnmendes.jpg",
+    image: "https://github.com/chloe526/bootcamp-project-2025/blob/main/shawnmendes.jpg?raw=true",
     imageAlt: "shawn mendes concert pic",
     slug: "/shawnmendes",
     id: "2"
@@ -37,7 +37,7 @@ const Blogs: Blog[] = [
     title: "Food.",
     date: "May 26 2007 - October 16, 2025",
     description: "Food that I've been deprived of since leaving for Calpoly SLO",
-    image: "huilaushan.jpg",
+    image: "https://github.com/chloe526/bootcamp-project-2025/blob/main/huilaushan.jpg?raw=true",
     imageAlt: "hui lau shan preview",
     slug: "food",
     id: "3"
@@ -97,14 +97,14 @@ if (btn) {
 
     const img = document.getElementById('blog-image-1') as HTMLImageElement;
 
-    btn.addEventListener('click', () => 
+        btn.addEventListener('click', () => 
         {
-        if (img.src == "hellweek.jpg") {
-            img.src = "dead.jpg"
+        if (img.src == "https://github.com/chloe526/bootcamp-project-2025/blob/main/hellweek.jpg?raw=true") {
+            img.src = "https://github.com/chloe526/bootcamp-project-2025/blob/main/dead.jpg?raw=true";
             img.alt = "old image with one eye";
         } else 
             {
-            img.src = "hellweek.jpg"
+            img.src = "https://github.com/chloe526/bootcamp-project-2025/blob/main/hellweek.jpg?raw=true"
             img.alt = "new image with 1 eyes open"
         }
     });
