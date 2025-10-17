@@ -28,7 +28,7 @@ const Blogs: Blog[] = [
     description: "Went back to the bay area to see family and attend Shawn Mendes concert with childhood friends",
     image: "shawnmendes.jpg",
     imageAlt: "shawn mendes concert pic",
-    slug: "/shawn-mendes-concert",
+    slug: "/shawnmendes",
   },
   {
     title: "Food.",
