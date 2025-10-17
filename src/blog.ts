@@ -20,7 +20,7 @@ const Blogs: Blog[] = [
     description: "Day in life of college student before first midterm",
     image: "vitamincwater.jpg",
     imageAlt: "Vitamin C Water",
-    slug: "midterm-season",
+    slug: "/midterm-season",
   },
   {
     title: "Shawn Mendes Concert",
@@ -28,7 +28,7 @@ const Blogs: Blog[] = [
     description: "Went back to the bay area to see family and attend Shawn Mendes concert with childhood friends",
     image: "shawnmendes.jpg",
     imageAlt: "shawn mendes concert pic",
-    slug: "shawn-mendes-concert",
+    slug: "/shawn-mendes-concert",
   },
   {
     title: "Food.",
@@ -48,6 +48,8 @@ console.log(blogContainer)
 Blogs.forEach((blog) => {
     const linebreak = document.createElement("hr");
 
+    const space = document.createElement("p")
+
 	const blogDiv = document.createElement("div");
     blogDiv.classList.add("blog-post");
 
@@ -60,7 +62,7 @@ Blogs.forEach((blog) => {
 
     const link = document.createElement("a");
     link.href = `blogs/${blog.slug}.html`;
-    link.textContent = "Read more →";
+    link.textContent = "Read more !";
     
     const image = document.createElement("img");
     image.src = blog.image;
@@ -79,6 +81,7 @@ Blogs.forEach((blog) => {
     blogDiv.appendChild(image);
     blogDiv.appendChild(description);
     blogDiv.appendChild(link)
+    blogDiv.append(space)
 
     if (blogContainer)
         blogContainer.appendChild(blogDiv);

@@ -8,7 +8,7 @@ var Blogs = [
         description: "Day in life of college student before first midterm",
         image: "vitamincwater.jpg",
         imageAlt: "Vitamin C Water",
-        slug: "midterm-season",
+        slug: "/midterm-season",
     },
     {
         title: "Shawn Mendes Concert",
@@ -16,7 +16,7 @@ var Blogs = [
         description: "Went back to the bay area to see family and attend Shawn Mendes concert with childhood friends",
         image: "shawnmendes.jpg",
         imageAlt: "shawn mendes concert pic",
-        slug: "shawn-mendes-concert",
+        slug: "/shawn-mendes-concert",
     },
     {
         title: "Food.",
@@ -31,6 +31,7 @@ var blogContainer = document.getElementById('blog-container');
 console.log(blogContainer);
 Blogs.forEach(function (blog) {
     var linebreak = document.createElement("hr");
+    var space = document.createElement("p");
     var blogDiv = document.createElement("div");
     blogDiv.classList.add("blog-post");
     var title = document.createElement("h1");
@@ -55,6 +56,7 @@ Blogs.forEach(function (blog) {
     blogDiv.appendChild(image);
     blogDiv.appendChild(description);
     blogDiv.appendChild(link);
+    blogDiv.append(space);
     if (blogContainer)
         blogContainer.appendChild(blogDiv);
 });
