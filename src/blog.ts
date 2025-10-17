@@ -15,12 +15,12 @@ type Blog = {
  */
 const Blogs: Blog[] = [
   {
-    title: "Week before Midterm Season",
+    title: "Midterm Season",
     date: "October 16, 2025",
-    description: "Day in life of college student before first midterm",
+    description: "Day in life of college student during their first midterm",
     image: "hellweek.jpg",
     imageAlt: "crashing out",
-    slug: "/midterm-season",
+    slug: "/hellweek",
   },
   {
     title: "Shawn Mendes Concert",
