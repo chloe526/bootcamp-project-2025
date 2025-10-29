@@ -9,7 +9,7 @@ export default function Navbar() {
     // NOTE: we use "class" in HTML but React is quirky so we have to 
     // change all the "class" to "className"
     <header className={style.navbar}>
-      <h1> Chloe Low's Personal Website </h1>
+      <h1> Chloe Low&apos;s Personal Website </h1>
       <nav>
         <Link href="/">Home</Link>
         <Link href="/blogs">Blogs</Link>
