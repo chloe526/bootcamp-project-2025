@@ -3,12 +3,13 @@ import styles from './../page.module.css'
   export default function Contact() {
         return (
           <div>
+          <main className={styles.monospace}>
             <h1 className={styles.pageLogo}>- Contact -</h1>
             <p>This lists the best way to contact me.</p>
 
             <p style={{ textAlign: 'center' }}>Email: low_chloe@icloud.com</p>
 
-            <form id="contact-form" className={styles.contactForm}>
+            <form id="contact-form">
               <label htmlFor="name">Name:</label>
               <input type="text" id="name" name="name" placeholder="Name" required />
               <br />
@@ -25,6 +26,7 @@ import styles from './../page.module.css'
                 <input type="submit" value="Submit" />
               </p>
             </form>
+        </main>
       </div>
     )
   }
