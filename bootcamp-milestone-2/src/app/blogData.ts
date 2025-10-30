@@ -9,20 +9,20 @@ const blogs = [
         description: "Day in life of college student during their first midterm",
         image: dead, 
         imageAlt: "crashing out",
-        slug: "/hellweek",
+        slug: "hellweek",
         id: "1"
         },
         {
         title: "Shawn Mendes Concert",
         date: "October 14, 2025",
-        description: "Went back to the bay area to see family and attend Shawn Mendes concert with childhood friends",
+        description: "Went back to the bay for a Shawn Mendes concert with childhood friends",
         image: shawn,
         imageAlt: "shawn mendes concert pic",
-        slug: "/shawnmendes",
+        slug: "shawnmendes",
         id: "2"
         },
         {
-        title: "Food.",
+        title: "Food and Food.",
         date: "May 26 2007 - October 16, 2025",
         description: "Food that I've been deprived of since leaving for Calpoly SLO",
         image: huilaushan,
