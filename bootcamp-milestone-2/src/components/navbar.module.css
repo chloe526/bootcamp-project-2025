@@ -1,14 +1,14 @@
 .blog {
-  padding: 24px;
+  padding: 0;
 }
 
 body {
-  padding: 20px 20px 60px;
-  max-width: 680px;
-  margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fafafa;
-  color: #333;
+  background: var(--cg-grey);
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
 }
 
 .navbar {
@@ -29,19 +29,46 @@ body {
     padding: 0px 0px;
 }
 
+
 .navlist {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    right: 30px;
-    list-style: none;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+
+  /* Debug border */
+  /* border: solid blue; */
 }
 
-.navlist a {
+.navbar a {
+  color: var(--cg-white);
+  font-weight: bold;
+  margin: 0 12px;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  font-family: monospace;
+}
+
+.navbar a:hover {
   color: var(--cg-blue);
   text-decoration: underline;
 }
 
-.navlist a:hover {
-  color: #9370db;
+.navbar a:active {
+  color: var(--cg-blue);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cg-black);
+  color: var(--cg-white);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  font-family: monospace;
 }
