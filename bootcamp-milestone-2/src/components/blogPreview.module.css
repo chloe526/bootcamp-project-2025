@@ -1,29 +1,50 @@
 .blogCard {
-  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
   padding: 16px;
   margin-bottom: 24px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: black;
+  
+}
+
+.blogImage {
+  width: 40%;
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  color: black;
+  flex-shrink: 0;
+}
+
+.blogText {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  gap: 8px;
 }
 
 .blogTitle {
   font-size: 1.5rem;
   margin-bottom: 8px;
-}
-
-.blogImage {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  font-family: monospace;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  align-items: center;
 }
 
 .blogDescription {
   font-size: 1rem;
   margin-bottom: 4px;
+  font-family: monospace;
+  color: rgb(0, 0, 0);
 }
 
 .blogPosted {
   font-size: 0.85rem;
-  color: gray;
+  color: rgb(0, 0, 0);
+  padding: 1px;
 }
