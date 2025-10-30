@@ -1,23 +1,24 @@
 import type { Metadata } from "next"; 
 import { Inter } from "next/font/google";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/navbar";
-import 'bootstrap/dist/css/bootstrap.css'
+import Footer from "../components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-//
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+// add footer later
 
 export const metadata: Metadata = {
   title: "[name] Personal Website",
@@ -35,6 +36,10 @@ export default function RootLayout({
         <Navbar />  
         {children}
       </body>
+
+      <footer>
+        <Footer />
+      </footer>
     </html>
   );
 }

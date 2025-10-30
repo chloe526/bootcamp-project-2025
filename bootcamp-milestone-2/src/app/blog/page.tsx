@@ -1,42 +1,42 @@
-import styles from './blog.module.css'
-import Link from 'next/link'
+import styles from './../page.module.css'
+import BlogPreview from '../../components/blogPreview';
+import blogs from '@/app/blogData'
 
 export default function Blog() {
-  return (
+  
+    return (
     <div>
-        <nav className={styles.navbar}>
-            <h1 className={styles.pageLogo}>
-                <Link href="/">Personal Website</Link>
-            </h1>
-
-            <ul className={styles.navlist}>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/portfolio">Portfolio</Link></li>
-                <li><Link href="/resume">Resume</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-            </ul>
-        </nav>
-
-        <main>
             <h1 className={styles.pageLogo}>- Blog -</h1>
 
             <p style={{ textAlign: 'center' }}>
             Welcome to the blog! Click on the links to read more.
             </p>
 
+            <div className={styles.blogContainer}>
+                {
+                blogs.map(blog => 
+                    
+                    <BlogPreview
+                        title={blog.title}
+                        date={blog.date}
+                        description={blog.description}
+                        image={blog.image}
+                        imageAlt={blog.imageAlt}
+                        slug={blog.slug}
+                        key={blog.id}
+                        id = {blog.id}
+                        />
+                    )}
+            </div>
+
             <br/>
-            <div id="blog-container">
-            <button id="btn" className={styles.pretty}>
+            <div className={styles.buttonContainer}>
+            <button className={styles.pretty}>
                 click me click me
             </button>
             </div>
-        </main>
 
         <br/>
-        <footer className={styles.footer}>
-            © 2023 Chloe Low&apos;s Website!! | All Rights Reserved
-        </footer>
     </div>
   )
 }
