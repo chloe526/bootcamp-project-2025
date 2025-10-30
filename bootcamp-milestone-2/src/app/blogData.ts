@@ -1,4 +1,6 @@
 import dead from '../public/dead.jpg'
+import shawn from '../public/shawnmendes.jpg'
+import huilaushan from '../public/huilaushan.jpg'
 
 const blogs = [
         {
@@ -14,7 +16,7 @@ const blogs = [
         title: "Shawn Mendes Concert",
         date: "October 14, 2025",
         description: "Went back to the bay area to see family and attend Shawn Mendes concert with childhood friends",
-        image: "/src/public/shawnmendes.jpg",
+        image: shawn,
         imageAlt: "shawn mendes concert pic",
         slug: "/shawnmendes",
         id: "2"
@@ -23,7 +25,7 @@ const blogs = [
         title: "Food.",
         date: "May 26 2007 - October 16, 2025",
         description: "Food that I've been deprived of since leaving for Calpoly SLO",
-        image: "/src/public/huilaushan.jpg",
+        image: huilaushan,
         imageAlt: "hui lau shan preview",
         slug: "food",
         id: "3"
