@@ -1,5 +1,5 @@
-import styles from './../page.module.css'
-import Link from 'next/link'
+import styles from "../page.module.css";
+import Link from "next/link";
 
 export default function Portfolio() {
   return (
@@ -12,7 +12,9 @@ export default function Portfolio() {
 
         <div className={styles.projectContainer}>
           <Link href="/">
-            <p className={styles.projectName}><strong>Personal Website</strong></p>
+            <p className={styles.projectName}>
+              <strong>Personal Website</strong>
+            </p>
           </Link>
 
           <p className={styles.projectDescription}>
@@ -23,5 +25,5 @@ export default function Portfolio() {
         </div>
       </main>
     </div>
-  )
+  );
 }
