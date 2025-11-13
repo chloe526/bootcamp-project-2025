@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 interface BlogPreviewProps {
   title: string; 
-  date: string; 
+  date: Date; 
   description: string;
   image: string | StaticImageData; 
   imageAlt: string; 
@@ -27,7 +27,7 @@ export default function BlogPreview(params: BlogPreviewProps) {
 
       <div className={styles.blogText}>
         <p className={styles.blogDescription}>{params.description}</p>
-        <p className={styles.blogPosted}>Posted on: {params.date}</p>
+        <p className={styles.blogPosted}>Posted on: {params.date.toString()}</p>
         <Link href={`/${params.slug}`} className={styles.blogLink}>
           Read more
         </Link>

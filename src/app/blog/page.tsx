@@ -1,8 +1,23 @@
 import styles from "../page.module.css";
 import BlogPreview from "../../components/blogPreview";
-import blogs from "@/app/blogData";
+import connectDB from "@/database/db";
+import Blog from "@/database/blogSchema";
 
-export default function Blog() {
+async function getBlogs(){
+	await connectDB() // function from db.ts before
+
+	try {
+			// query for all blogs and sort by date
+	    const blogs = await Blog.find().sort({ date: -1 }).orFail()
+			// send a response as the blogs as the message
+	    return blogs
+	} catch (err) {
+	    return null
+	}
+}
+
+export default async function BlogComponent() {
+  const blogs = await getBlogs()
   return (
     <div>
       <main className={styles.monospace}>
@@ -13,7 +28,7 @@ export default function Blog() {
         </p>
 
         <div className={styles.blogContainer}>
-          {blogs.map((blog) => (
+          {blogs?.map((blog) => (
             <BlogPreview
               title={blog.title}
               date={blog.date}

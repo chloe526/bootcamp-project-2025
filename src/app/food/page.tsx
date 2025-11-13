@@ -1,9 +1,9 @@
 import styles from "../page.module.css";
 import Image from "next/image";
-import huilaushan from "../../public/huilaushan.jpg";
-import fruitcake from "../../public/fruitcake.jpg";
-import ricecake from "../../public/ricecake.jpg";
-import tomatoeggrice from "../../public/tomatoeggrice.jpg";
+import huilaushan from "../../../public/huilaushan.jpg";
+import fruitcake from "../../../public/fruitcake.jpg";
+import ricecake from "../../../public/ricecake.jpg";
+import tomatoeggrice from "../../../public/tomatoeggrice.jpg";
 
 export default function Food() {
   return (

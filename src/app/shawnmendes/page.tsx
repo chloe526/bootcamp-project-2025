@@ -1,7 +1,7 @@
 import styles from "../page.module.css";
 import Image from "next/image";
-import shawn1 from "../../public/shawnmendes.jpg";
-import shawn2 from "../../public/shawnmendes2.jpg";
+import shawn1 from "../../../public/shawn.jpg";
+import shawn2 from "../../../public/shawnmendes2.jpg";
 
 export default function ShawnMendes() {
   return (

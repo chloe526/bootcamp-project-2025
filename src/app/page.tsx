@@ -1,5 +1,4 @@
 import styles from './page.module.css'
-import mango from '../public/mango.jpg'
 import Image from "next/image";
 
 export default function Home() {
@@ -11,7 +10,9 @@ export default function Home() {
             
             <div className={styles.aboutImage}>
             <Image
-              src={mango}
+              src={"/mango.jpg"}
+              width={128}
+              height={128}
               alt="mango"> 
             </Image>
             </div>

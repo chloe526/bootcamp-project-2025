@@ -1,7 +1,7 @@
 import styles from "../page.module.css";
 import Image from "next/image";
-import mathhw from "../../public/mathhw.jpg";
-import vitamincwater from "../../public/vitamincwater.jpg";
+import mathhw from "../../../public/mathhw.jpg";
+import vitamincwater from "../../../public/vitamincwater.jpg";
 
 export default function HellWeek() {
   return (

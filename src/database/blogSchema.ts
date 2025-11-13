@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import Image, { StaticImageData } from "next/image";
 
 // typescript type (can also be an interface)
 type Blog = {
@@ -7,11 +6,11 @@ type Blog = {
         date: Date; 
         description: string;
         content: string;
-        image: string | StaticImageData; 
+        image: string;
         imageAlt: string; 
         slug: string;
         id: string;
-        comments: IComment[]; // array for comments
+        comments: Comment[]; // array for comments
 };
 
 
@@ -25,7 +24,6 @@ const blogSchema = new Schema<Blog>({
         imageAlt: { type: String, required: true },
         slug: { type: String, required: true },
         id: { type: String, required: true },
-
 })
 
 // defining the collection and model
