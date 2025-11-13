@@ -1,0 +1,33 @@
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers vertically */
+  align-items: center;     /* centers horizontally */
+  text-align: center;
+  background-color: var(--cg-white);
+  border-radius: 12px;
+  padding: 2em;
+  margin: 1.5em auto;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.projectTitle {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+
+.projectText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  max-width: 500px;
+}
