@@ -1,9 +1,11 @@
 import BlogComment from "../../../components/blogComment";
+import BlogImage from "../../../components/blogImage";
 import { IComment } from "../../../database/blogSchema";
+import styles from "../../page.module.css";
 
 type Props = {
-  params: { slug: string } | Promise<{ slug: string }>;
-};
+  params: { slug: string } ;
+};//| Promise<{ slug: string }
 
 async function getBlog(slug: string) {
   try {
@@ -11,6 +13,7 @@ async function getBlog(slug: string) {
     const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
       cache: "no-store",
     });
+    
     // This checks that the GET request was successful
     if (!res.ok) {
       throw new Error("Failed to fetch blog");
@@ -29,32 +32,41 @@ async function getBlog(slug: string) {
   }
 }
 
-export default async function Blog({ params: { slug } }: Props) {
-  const { slug } = await params; // unwrap params
+export default async function Blog ( { params }: Props) {
+  const {slug} = await params
   const blog = await getBlog(slug);
-
-
-  console.log("Fetched blog:", blog);           // <-- check entire blog
-    console.log("Blog comments:", blog?.comments);
 
 
   if (!blog) return <p>Blog not found.</p>;
 
   return (
-    <div>
-      <h1>{blog.title}</h1>
-      <p>{new Date(blog.date).toLocaleDateString()}</p>
+    <div className={styles.blogContainer}>
+    <h1 className={styles.title}>{blog.title}</h1>
 
-      <p>{blog.description}</p>
-      <div>{blog.content}</div>
-        <p>
-      <h1>Comments:</h1>
-      {blog.comments.map((comment: IComment, index: number) => (
-        <BlogComment key={index} comment={comment} />
-      ))}
+    <p className={styles.date}>
+      {new Date(blog.date).toLocaleDateString()}
     </p>
 
-      <p>No comments yet.</p>
-    </div>
+    <p className={styles.description}>{blog.description}</p>
+
+    <div className={styles.content}>{blog.content}</div>
+
+    <BlogImage
+    src={blog.image}
+    alt={blog.imageAlt || blog.title}
+    />
+
+    <section className={styles.commentsSection}>
+      <h2 className={styles.commentsHeader}>Comments</h2>
+
+      {blog.comments.length > 0 ? (
+        blog.comments.map((comment: IComment, index: number) => (
+          <BlogComment key={index} comment={comment} />
+        ))
+      ) : (
+        <p className={styles.noComments}>No comments yet.</p>
+      )}
+    </section>
+  </div>
   );
 }
