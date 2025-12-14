@@ -39,12 +39,14 @@ type IParams = {
 	We need to include req, even though we don't use it here, so that we can access
 	the second argument
 */
+
 export async function GET(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: Promise<{ slug: string }> }
 ) {
-  const { slug } = params;
+  const { slug } = await context.params;
 
   return NextResponse.json({ slug });
 }
+
 
