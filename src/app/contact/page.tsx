@@ -13,6 +13,11 @@ export default function ContactPage() {
 
     const form = e.currentTarget;
 
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
+      .value;
+
     try {
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -24,11 +29,7 @@ export default function ContactPage() {
       await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name.value,
-          email: form.email.value,
-          message: form.message.value,
-        }), 
+        body: JSON.stringify({ name, email, message }),
       });
 
       setSuccess(true);
@@ -72,12 +73,10 @@ export default function ContactPage() {
         </button>
 
         {success && (
-          <p className={styles.successMessage}>
-            Message sent successfully!
-          </p>
+          <p className={styles.successMessage}>Message sent successfully!</p>
         )}
         {error && <p className={styles.errorMessage}>{error}</p>}
       </form>
     </div>
-  )
+  );
 }
