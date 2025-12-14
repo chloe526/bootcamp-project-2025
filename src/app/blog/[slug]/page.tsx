@@ -49,9 +49,11 @@ export default async function Blog({ params }: Props) {
 
       {Array.isArray(blog.images) && blog.images.length > 0 && (
   <div className={styles.blogImage}>
-    {blog.images.map((img, i) => (
-      <BlogImage key={i} src={img.src} alt={img.alt} />
-    ))}
+    {blog.images.map(
+  (img: { src: string; alt: string }, i: number) => (
+    <BlogImage key={i} src={img.src} alt={img.alt} />
+  )
+)}
   </div>
 )}
 
