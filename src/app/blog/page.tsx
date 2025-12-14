@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import styles from "../page.module.css";
 import BlogPreview from "../../components/blogPreview";
 import connectDB from "@/database/db";
