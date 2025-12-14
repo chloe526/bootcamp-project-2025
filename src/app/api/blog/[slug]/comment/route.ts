@@ -1,8 +1,6 @@
-export const dynamic = "force-dynamic";
-
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/database/db";
-import blogSchema from "@/database/blogSchema";
+import blogSchema from "@/database/blogSchema"
 
 export async function POST(
   req: NextRequest,
@@ -10,8 +8,8 @@ export async function POST(
 ) {
   await connectDB();
 
-  const { slug } = params;
   const body = await req.json();
+  const { slug } = await params;
 
   if (!body.comment) {
     return NextResponse.json(
@@ -20,7 +18,7 @@ export async function POST(
     );
   }
 
-  await blogSchema.updateOne(
+  const result = await blogSchema.updateOne(
     { slug },
     {
       $push: {
