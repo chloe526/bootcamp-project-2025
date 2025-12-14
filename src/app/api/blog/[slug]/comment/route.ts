@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/database/db";
-import blogSchema from "@/database/blogSchema"
+import blogSchema from "@/database/blogSchema";
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: Promise<{ slug: string }> }
 ) {
   await connectDB();
 
+  const { slug } = await context.params;
   const body = await req.json();
-  const { slug } = await params;
 
   if (!body.comment) {
     return NextResponse.json(
@@ -18,7 +18,7 @@ export async function POST(
     );
   }
 
-  const result = await blogSchema.updateOne(
+  await blogSchema.updateOne(
     { slug },
     {
       $push: {
@@ -29,8 +29,7 @@ export async function POST(
         },
       },
     }
-);
-
+  );
 
   return NextResponse.json({ success: true });
 }
