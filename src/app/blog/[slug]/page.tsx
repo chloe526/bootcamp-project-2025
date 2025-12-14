@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import BlogComment from "../../../components/blogComment";
 import BlogImage from "../../../components/blogImage";
 import { IComment } from "../../../database/blogSchema";
