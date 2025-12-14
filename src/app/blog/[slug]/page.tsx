@@ -6,7 +6,7 @@ import CommentForm from "../../../components/commentForm";
 
 type Props = {
   params: { slug: string };
-}; //| Promise<{ slug: string }
+}; 
 
 async function getBlog(slug: string) {
   try {
