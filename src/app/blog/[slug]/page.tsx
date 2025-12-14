@@ -13,8 +13,11 @@ type Props = {
 
 async function getBlog(slug: string) {
   try {
+    const baseUrl =
+      process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+    
     // This fetches the blog from an api endpoint that would GET the blog
-    const res = await fetch(`/api/blog/${slug}`, {
+    const res = await fetch(`${baseUrl}/api/blog/${slug}`, {
       cache: "no-store",
     });
 
