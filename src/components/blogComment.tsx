@@ -9,7 +9,7 @@ type CommentProps = {
 		Makes your code look nicer and allows for better readability.
 	*/}
 function parseCommentTime(time: Date | string){
-        const date = new Date(time); // make sure it's a Date object
+        const date = new Date(time); 
         
         const options: Intl.DateTimeFormatOptions = { 
         year: 'numeric', 
