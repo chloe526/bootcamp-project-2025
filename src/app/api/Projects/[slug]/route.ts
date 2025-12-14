@@ -39,16 +39,12 @@ type IParams = {
 	We need to include req, even though we don't use it here, so that we can access
 	the second argument
 */
-export async function GET(req: NextRequest, { params }: IParams) {
-		// If { params } looks confusing, check the note below this code block
-		
-    await connectDB() // function from db.ts before
-		const { slug } = params // another destructure
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { slug: string } }
+) {
+  const { slug } = params;
 
-	   try {
-	        const blog = await projectSchema.findOne({ slug }).orFail()
-	        return NextResponse.json(blog)
-	    } catch (error) {
-	        return NextResponse.json('Project not found.', { status: 404 })
-	    }
+  return NextResponse.json({ slug });
 }
+
