@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+"use client";
 
 import BlogComment from "../../../components/blogComment";
 import BlogImage from "../../../components/blogImage";
