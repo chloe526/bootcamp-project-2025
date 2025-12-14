@@ -4,12 +4,13 @@ import blogSchema from "@/database/blogSchema"
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: Promise<{ slug: string }> }
 ) {
   await connectDB();
 
+
   const body = await req.json();
-  const { slug } = await params;
+  const { slug } = await context.params;
 
   if (!body.comment) {
     return NextResponse.json(
