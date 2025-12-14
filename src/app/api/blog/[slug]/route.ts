@@ -12,6 +12,8 @@ export async function GET(
 
   const { slug } = await context.params;
 
+  console.log("SLUG FROM URL:", slug);
+
   const blog = await blogSchema.findOne({ slug });
 
   if (!blog) {
