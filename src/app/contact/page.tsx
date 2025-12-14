@@ -1,4 +1,4 @@
-"use client";
+"use client"; // for post
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -28,7 +28,7 @@ export default function ContactPage() {
           name: form.name.value,
           email: form.email.value,
           message: form.message.value,
-        }),
+        }), 
       });
 
       setSuccess(true);

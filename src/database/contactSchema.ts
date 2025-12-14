@@ -9,6 +9,6 @@ const ContactSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-
+ 
 export default mongoose.models.Contact ||
   mongoose.model("Contact", ContactSchema);
