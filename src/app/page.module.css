@@ -3,14 +3,29 @@
     align-items: center;
 }
 
-.blogContainer {
-  text-align: center;
+.content{
   font-size: 0.9rem;
-  color: #777;
-  margin-top: 40px;
-  padding-top: 16px;
-  border-top: 1px solid #e6e6fa;
+  font-family: monospace;
+  line-height: 1.5;
+  padding-left: 6px;
 }
+
+.blogContainer {
+  max-width: 750px;
+  margin: 0 auto;          
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  padding-top: 32px;
+}
+
+.blogPreviewContainer {
+  max-width: 750px;      
+  font-size: 0.95rem;
+  color: #555;
+  padding-top: 32px;
+}
+
 
 .resume {
     font-family: monospace;
@@ -19,10 +34,39 @@
 .monospace {
   font-family: monospace;
   background: var(--cg-grey);
-  min-height: 50vh;
-  padding: 0;
+  min-height: 70vh;          
+  padding: 4rem 1rem 6rem;  
   margin: 0;
+}
+
+.commentContainer {
+  max-width: 600px;
+  margin: 12px auto;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.commentUser {
+  font-size: 0.9rem;
   font-family: monospace;
+  font-weight: bold;
+}
+
+.commentText {
+  font-size: 0.85rem;
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+.commentTime {
+  font-size: 0.75rem;
+  color: #888;
+  align-self: flex-end;
 }
 
 
@@ -53,6 +97,7 @@
   margin: 0px;
   line-height: 1.5;
   overflow: scroll;
+  font: monospace;
 
   flex-direction: column;
   text-align: center;
@@ -82,4 +127,118 @@
   object-fit: cover;   
   width: 100%;               
   max-width: 400px;
+}
+
+.commentDivider {
+  max-width: 600px;
+  margin: 40px auto 24px;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+.addCommentHeader {
+  text-align: center;
+  font-size: 1rem;
+  font-family: monospace;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.commentFormWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* Contact page */
+.contactContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 1rem 6rem;
+  text-align: center;
+}
+
+.contactTitle {
+  font-family: Georgia;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contactSubtitle {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactInput,
+.contactTextarea {
+  font-family: monospace;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.contactInput:focus,
+.contactTextarea:focus {
+  border-color: #999;
+}
+
+.contactTextarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contactButton {
+  margin-top: 12px;
+  align-self: center;
+  padding: 6px 16px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: white;
+  cursor: pointer;
+}
+
+.contactButton:hover {
+  background: #f3f3f3;
+}
+
+.successMessage {
+  margin-top: 10px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: green;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: red;
+}
+
+.blogImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+  text-align: center;
+
+  background-color: var(--cg-white);
+  border-radius: 12px;
+  padding: 2em;
+  margin: 1.5em auto;
+
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
