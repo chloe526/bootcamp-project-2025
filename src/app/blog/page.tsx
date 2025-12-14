@@ -27,16 +27,16 @@ export default async function BlogComponent() {
           Welcome to the blog! Click on the links to read more.
         </p>
 
-        <div className={styles.blogContainer}>
+        <div className={styles.blogPreviewContainer}>
           {blogs?.map((blog) => (
             <BlogPreview
+              key={blog.id}
               title={blog.title}
               date={blog.date}
               description={blog.description}
-              image={blog.image}
-              imageAlt={blog.imageAlt}
+              previewImageSrc={blog.previewImageSrc}
+              previewImageAlt={blog.previewImageAlt}
               slug={blog.slug}
-              key={blog.id}
               id={blog.id}
             />
           ))}

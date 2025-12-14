@@ -1,49 +1,83 @@
+"use client";
+
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import styles from "../page.module.css";
 
-export default function Contact() {
+export default function ContactPage() {
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name.value,
+          email: form.email.value,
+          message: form.message.value,
+        }),
+      });
+
+      setSuccess(true);
+      form.reset();
+    } catch (err) {
+      setError("Failed to send message");
+    }
+  }
+
   return (
-    <div>
-      <main className={styles.monospace}>
-        <h1 className={styles.pageLogo}>- Contact -</h1>
-        <p>This lists the best way to contact me.</p>
+    <div className={styles.contactContainer}>
+      <h1 className={styles.contactTitle}>Contact</h1>
+      <p className={styles.contactSubtitle}>
+        These are the best ways to contact me.
+      </p>
 
-        <p style={{ textAlign: "center" }}>Email: low_chloe@icloud.com</p>
+      <form className={styles.contactForm} onSubmit={handleSubmit}>
+        <input
+          className={styles.contactInput}
+          name="name"
+          placeholder="Name"
+          required
+        />
 
-        <form id="contact-form">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-            required
-          />
-          <br />
+        <input
+          className={styles.contactInput}
+          name="email"
+          placeholder="Email"
+          required
+        />
 
-          <label htmlFor="email">Email:</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <br />
+        <textarea
+          className={styles.contactTextarea}
+          name="message"
+          placeholder="Message"
+          required
+        />
 
-          <label htmlFor="comments">Comments:</label>
-          <textarea
-            id="comments"
-            name="comments"
-            placeholder="Comments"
-            required
-          ></textarea>
-          <br />
+        <button className={styles.contactButton} type="submit">
+          Send
+        </button>
 
-          <p style={{ textAlign: "center" }}>
-            <input type="submit" value="Submit" />
+        {success && (
+          <p className={styles.successMessage}>
+            Message sent successfully!
           </p>
-        </form>
-      </main>
+        )}
+        {error && <p className={styles.errorMessage}>{error}</p>}
+      </form>
     </div>
-  );
+  )
 }

@@ -26,6 +26,7 @@ export default function Comment({ comment }: CommentProps) {
     return (
          <div className={styles.commentContainer}>
             <h4 className={styles.commentUser}>{comment.user}</h4>
+            
             <p className={styles.commentText}>{comment.comment}</p>
             <span className={styles.commentTime}>{parseCommentTime(comment.time)}</span>
         </div>

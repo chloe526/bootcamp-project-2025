@@ -1,23 +1,24 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import styles from "./blogPreview.module.css";
-import Link from 'next/link'
+import Link from "next/link";
 
 interface BlogPreviewProps {
-  title: string; 
-  date: Date; 
+  title: string;
+  date: Date;
   description: string;
-  image: string | StaticImageData; 
-  imageAlt: string; 
+  previewImageSrc: string;
+  previewImageAlt: string;
   slug: string;
   id: string;
 }
 
 export default function BlogPreview(params: BlogPreviewProps) {
+
   return (
     <div className={styles.blogCard} id={params.id}>
       <Image
-        src={params.image}
-        alt={params.imageAlt}
+        src={params.previewImageSrc}
+        alt={params.previewImageAlt}
         width={500}
         height={300}
         className={styles.blogImage}
@@ -27,13 +28,14 @@ export default function BlogPreview(params: BlogPreviewProps) {
 
       <div className={styles.blogText}>
         <p className={styles.blogDescription}>{params.description}</p>
-        <p className={styles.blogPosted}>Posted on: {params.date.toString()}</p>
+        <p className={styles.blogPosted}>
+          Posted on: {new Date(params.date).toLocaleDateString()}
+        </p>
+
         <Link href={`/blog/${params.slug}`} className={styles.blogLink}>
           Read more
         </Link>
-        
       </div>
-    
     </div>
   );
 }

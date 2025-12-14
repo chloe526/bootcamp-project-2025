@@ -16,8 +16,6 @@ export default function BlogImage({ src, alt }: BlogImageProps) {
         height={450}
         className={styles.image}
       />
-
-      <hr className={styles.divider} />
     </div>
   );
 }
