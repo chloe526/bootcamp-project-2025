@@ -14,7 +14,10 @@ export default function CommentForm({ slug }: { slug: string }) {
 
     if (!user || !comment) return;
 
-    await fetch(`/api/blog/${slug}/comment`, {
+    const baseUrl =
+      process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+    await fetch(`${baseUrl}/api/blog/${slug}/comment`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
